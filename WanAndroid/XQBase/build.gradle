@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+def supportLibVersion = "27.1.1"
+
+configurations.all {
+    resolutionStrategy {
+        force "com.android.support:support-v4:$supportLibVersion"
+    }
+}
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+//    api project(":XQBase")
+
+    api 'com.android.support:multidex:1.0.3'
+    api "com.android.support:support-v4:$supportLibVersion"
+    api "com.android.support:appcompat-v7:$supportLibVersion"
+    api "com.android.support:recyclerview-v7:$supportLibVersion"
+    api "com.android.support:design:$supportLibVersion"
+    // MagicaSakura is an Android multi theme library which supporting both daily colorful theme and night theme.
+//    api 'com.bilibili:magicasakura:0.1.9-beta3@aar'
+    // android-common-lib Android常用工具类(
+//    api 'cn.trinea.android.common:trinea-android-common:4.2.15'
+    //
+    api 'com.google.code.gson:gson:2.8.5'
+//    api 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.1.0'
+    api 'io.reactivex.rxjava2:rxjava:2.1.0'
+    // 必要rxjava2依赖
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //非必要依赖， log依赖，如果需要打印OkHttpLog需要添加
+    api 'com.jakewharton:butterknife:8.5.1'
+    // 日志
+    api 'com.orhanobut:logger:2.2.0'
+
+    api 'com.blankj:utilcode:1.23.3'
+    //1.0.5 当1.1.0出现问题可以回退到1.0.5.1
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+//    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'//没有使用特殊Header，可以不加这行
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    api 'com.github.bumptech.glide:glide:4.8.0'
+
+
+//    api 'com.github.xuexiangjys:XUI:1.0.1'
+    api 'com.youth.banner:banner:1.4.10'  //最新版本
+
+
+    //如果开启了内存泄漏监测leak,就需要加上这个依赖
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+
+}

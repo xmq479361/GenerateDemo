@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">QWAndroid</string>
+    <string name="text_login">登录</string>
+    <string name="text_input_username">请输入用户名</string>
+    <string name="text_input_password">请输入密码</string>
+    <string name="text_input_password_again">请再次输入密码</string>
+    <string name="text_login_remind_enough_len_username">用户名少于6位</string>
+    <string name="text_login_remind_enough_len_password">密码少于6位</string>
+    <string name="text_login_remind_empty_username">用户名不能为空</string>
+    <string name="text_login_remind_empty_password">密码不能为空</string>
+    <string name="text_login_reimnd_failed">登陆失败！</string>
+    <string name="text_reg_reimnd_failed">注册失败！</string>
+    <string name="text_reg_reimnd_success">注册成功！</string>
+    <string name="text_login_reg_account">还没账号？点此注册</string>
+    <string name="text_reg">注册</string>
+</resources>

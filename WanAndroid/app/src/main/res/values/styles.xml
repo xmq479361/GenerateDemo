@@ -1,0 +1,95 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" paren="Theme.AppCompat">-->
+    <!--<style name="AppTheme" paren="Theme.AppCompat.Light.NoActionBar">-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--<style name="AppTheme" parent="XUITheme.Phone">-->
+        <!-- 自定义自己的主题样式 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="size_content_text">@dimen/size_content_text_phone</item>
+        <item name="size_explain_text">@dimen/size_explain_text_phone</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <!--<style name="AppTheme" parent="XUITheme.Phone">-->
+        <!-- 自定义自己的主题样式 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="size_content_text">@dimen/size_content_text_phone</item>
+        <item name="size_explain_text">@dimen/size_explain_text_phone</item>
+    </style>
+
+    <!--自定义style的parent必须是Theme.AppCompat.XXX，并且fontVariationSettings要NoActionBar，这样能隐藏闪屏页界面的标题栏-->
+    <!--<style name="xq_splashTheme" paren" >Theme.AppCompat.NoActionBar">-->
+    <style name="xq_splashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/bg_splashimg</item>
+        <item name="actionBarSize">50dp</item>
+        <item name="actionBarHeight">50dp</item>
+        <!--//windowBackground设置为闪屏页要显示的图片。-->
+
+    </style>
+
+
+    <!--TabLayout-->
+    <style name="TabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/selector_tab_text_color</item>
+        <item name="android:textSize">?attr/size_content_text</item>
+    </style>
+
+    <style name="TabText.Explain">
+        <item name="android:textColor">@color/selector_tab_text_color</item>
+        <item name="android:textSize">?attr/size_explain_text</item>
+    </style>
+    <style name="xq_TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/color_light_blue</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/TabText</item>
+        <item name="tabSelectedTextColor">@color/color_light_blue</item>
+        <item name="tabTextColor">@color/color_gray_6</item>
+    </style>
+    <style name="xq_text_bigtext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">42sp</item>
+        <item name="android:textColor">@color/colorTextUnclick</item>
+    </style>
+
+    <style name="xq_text_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="xq_text_input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/item_input_height</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+    </style>
+
+    <!--<item name="android:layout_height">@dimen/item_input_height</item>-->
+    <style name="xq_text_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">#115583</item>
+    </style>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--&lt;!&ndash;手机主题&ndash;&gt;-->
+    <!--<style name="XUITheme.Phone">-->
+        <!--&lt;!&ndash;<item name="item_input_height">40dp</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;actionbar&ndash;&gt;-->
+        <!--<item name="actionBarSize">50dp</item>-->
+        <!--<item name="actionBarHeight">50dp</item>-->
+        <!--&lt;!&ndash;<item name="xui_actionbar_height">@dimen/xui_actionbar_height_phone</item>&ndash;&gt;-->
+    <!--</style>-->
+</resources>

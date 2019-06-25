@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pages.main.MainActivity">
+
+    <!--android:layout_height="@dimen/actionBarSize"-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary" />
+
+
+    <!--<FrameLayout-->
+    <!--android:id="@+id/id_fg_main_container"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1">-->
+
+    <!--</FrameLayout>-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_fg_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+    <!--android:background="@drawable/xui_list_item_bg_with_border_top"-->
+    <!--android:layout_height="?attr/actionBarHeight"-->
+    <!--android:layout_height="?attr/actionBarHeight"-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        style="@style/xq_TabLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarHeight"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@android:color/transparent"
+        app:tabMinWidth="300dp"
+        app:tabMode="fixed"
+        app:tabPaddingTop="2dp"
+        app:tabTextAppearance="@style/TabText.Explain" />
+    <!--<android.support.v4.view.ViewPager-->
+    <!--android:id="@+id/viewPager"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginTop="?actionBarSize"-->
+    <!--android:layout_marginBottom="60dp" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:background="@android:color/white"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/id_main_ll_home"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingTop="5dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/id_main_iv_home"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:src="@drawable/icon_home"-->
+    <!--android:textColor="@color/colorText"-->
+    <!--android:tint="@color/colorText" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/id_main_tv_home"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:text="@string/text_login"-->
+    <!--android:textColor="@color/colorText" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/id_main_ll_knowledge"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingTop="5dp">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/id_main_knowledge"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="@string/text_login" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/id_main_ll_project"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingTop="5dp">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/id_main_project"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="@string/text_login" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/id_main_ll_user"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingTop="5dp">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/id_main_user"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:text="@string/text_login" />-->
+    <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+</LinearLayout>

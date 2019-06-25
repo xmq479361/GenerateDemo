@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="size_content_text" format="dimension"/>
+    <attr name="size_explain_text" format="dimension"/>
+</resources>

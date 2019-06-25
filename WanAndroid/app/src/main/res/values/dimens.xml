@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_input_height">40dp</dimen>
+    <dimen name="item_line_height">24dp</dimen>
+    <dimen name="actionBarSize">50dp</dimen>
+    <dimen name="actionBarHeight">50dp</dimen>
+    <dimen name="size_content_text">15dp</dimen>
+    <dimen name="size_content_text_phone">12dp</dimen>
+    <dimen name="size_explain_text_phone">12dp</dimen>
+    <!-- ActionBar-->
+    <!--<dimen name="xui_actionbar_height_tablet_big">70dp</dimen>-->
+    <!--<dimen name="xui_actionbar_height_tablet_small">60dp</dimen>-->
+    <!--<dimen name="xui_actionbar_height_phone">52dp</dimen>-->
+</resources>

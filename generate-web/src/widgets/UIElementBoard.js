@@ -38,24 +38,59 @@ class UIElementBoard extends Component {
             </Row>
         )
     }
+    renderElement = (element)=>{
+        let {name, type} = element
+        return (
+            <li className="form-edit-widget-label"><a><i className="icon iconfont icon-input"></i><span>{name}</span></a>
+            </li>
+        )
+    }
 
     renderElements() {
         console.log("UIElementBoard: ")
         console.log(this.props.uiElements)
         let {uiElements} = this.props || [];
-        let date = [];
-        let rowIndex = 0;
-        for (let i = 0; i < uiElements.length; i++) {
-            if (i % 3 == 0) {
-                rowIndex++;
-            }
-        }
-        const ROW_ITEM_MAX = 3;
-        let rowEles = sliceArr(uiElements, ROW_ITEM_MAX) || [];
+        // let rowIndex = 0;
+        // for (let i = 0; i < uiElements.length; i++) {
+        //     if (i % 3 == 0) {
+        //         rowIndex++;
+        //     }
+        // }
+        // const ROW_ITEM_MAX = 3;
+        // let rowEles = sliceArr(uiElements, ROW_ITEM_MAX) || [];
+        {/*<Grid>*/}
+            {/*{rowEles.map(rowEles => this.renderRowElements(rowEles))}*/}
+        {/*</Grid>*/}
         return (
-            <Grid>
-                {rowEles.map(rowEles => this.renderRowElements(rowEles))}
-            </Grid>
+            <div class="components-list">
+            <ul>
+                {uiElements.map(element => this.renderElement(element))}
+                <li className="form-edit-widget-label"><a><i className="icon iconfont icon-input"></i><span>单行文本</span></a>
+                </li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-diy-com-textarea"></i><span>多行文本</span></a></li>
+                <li className="form-edit-widget-label"><a><i className="icon iconfont icon-number"></i><span>计数器</span></a>
+                </li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-radio-active"></i><span>单选框组</span></a></li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-check-box"></i><span>多选框组</span></a></li>
+                <li className="form-edit-widget-label"><a><i className="icon iconfont icon-time"></i><span>时间选择器</span></a>
+                </li>
+                <li className="form-edit-widget-label"><a><i className="icon iconfont icon-date"></i><span>日期选择器</span></a>
+                </li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-icon-test"></i><span>评分</span></a></li>
+                <li className="form-edit-widget-label"><a><i className="icon iconfont icon-color"></i><span>颜色选择器</span></a>
+                </li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-select"></i><span>下拉选择框</span></a></li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-switch"></i><span>开关</span></a></li>
+                <li className="form-edit-widget-label"><a><i
+                    className="icon iconfont icon-slider"></i><span>滑块</span></a></li>
+            </ul>
+            </div>
         )
     }
 }

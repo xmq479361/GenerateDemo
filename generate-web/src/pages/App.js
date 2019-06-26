@@ -18,13 +18,13 @@ class App extends Component {
                 </div>
                 <div className="container-fluid">
                     <div className="row main">
-                        <div className="col-md-3 nav">
+                        <div className="nav ">
                             <UIElementBoard/>
                         </div>
-                        <div className="col-md-3 nav-right">
+                        <div className="nav-right">
                             <UIAttributeBoard/>
                         </div>
-                        <div className="col-md-4 content">
+                        <div className="content">
                             <div className="content-body">
                                 <UIPreviewBoard/>
                             </div>

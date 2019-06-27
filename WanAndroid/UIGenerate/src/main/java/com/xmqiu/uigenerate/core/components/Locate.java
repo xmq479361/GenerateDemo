@@ -8,10 +8,17 @@ public class Locate {
 
 
   public static class Linear extends Locate{
-    public static enum Oritential{
+    public  enum Oritential{
       Horiontal, Vertical
     }
     Oritential mOritential;
+
+    @Override
+    public String toString() {
+      return "Linear{" +
+              "mOritential=" + mOritential +
+              '}';
+    }
 
     public Linear(Oritential oritential) {
       mOritential = oritential;
@@ -19,6 +26,8 @@ public class Locate {
 
   }
   public static class Relative extends Locate{
-
+    public  enum Oritential{
+      Horiontal, Vertical
+    }
   }
 }

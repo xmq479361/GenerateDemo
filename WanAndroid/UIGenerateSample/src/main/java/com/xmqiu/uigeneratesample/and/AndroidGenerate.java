@@ -1,4 +1,4 @@
-package com.xmqiu.uigeneratesample;
+package com.xmqiu.uigeneratesample.and;
 
 import com.xmqiu.uigenerate.core.BaseGenerate;
 import com.xmqiu.uigenerate.core.Config;
@@ -16,6 +16,11 @@ import java.util.List;
  * createDate 2019/6/25 21:05
  */
 public class AndroidGenerate extends BaseGenerate {
+  public AndroidGenerate(){
+    addGenerate(new TextGenerate());
+//    addGenerate(new ContainerGenerate());
+    addGenerate(new EmptyGenerate());
+  }
   @Override
   public IWidget generate(Config config, IWidgetDesc widgetDesc) {
     if (widgetDesc == null) {
@@ -36,27 +41,31 @@ public class AndroidGenerate extends BaseGenerate {
         childrenWidgets.add(subWidget);
       }
     }
-    IWidget widget =  coreProcess(widgetDesc, style, childrenWidgets);
+    IWidget widget =  coreProcess(widgetDesc, config, style, childrenWidgets);
 //    widget.appendChilren(childrenWidgets)
     return widget;
   }
 
-  IWidget coreProcess(IWidgetDesc widgetDesc, Style style, List<IWidget> children) {
+  IWidget coreProcess(IWidgetDesc widgetDesc, Config  config,Style style, List<IWidget> children) {
     Class<? extends IWidgetDesc> widgetDescClass = widgetDesc.getClass();
     IRealGenerate iRealGenerate = mGenerates.get(widgetDescClass);
-    IWidget widget = iRealGenerate.process(widgetDesc);
-    if (widget != null) {
-      return widget;
-    }
-    for (IRealGenerate mGenerate : mGenerates.values()) {
-      if (!widgetDescClass.isAssignableFrom(mGenerate.processClz())) {
-        continue;
-      }
-      widget = mGenerate.process(widgetDesc);
+    IWidget widget =null;
+    if(iRealGenerate!=null) {
+      widgetDesc.attachStyle(style);
+       widget = iRealGenerate.process(widgetDesc, config, style, children);
       if (widget != null) {
         return widget;
       }
     }
+//    for (IRealGenerate mGenerate : mGenerates.values()) {
+//      if (!widgetDescClass.isAssignableFrom(mGenerate.processClz())) {
+//        continue;
+//      }
+//      widget = mGenerate.process(widgetDesc, config,style, children);
+//      if (widget != null) {
+//        return widget;
+//      }
+//    }
     return widget;
   }
 

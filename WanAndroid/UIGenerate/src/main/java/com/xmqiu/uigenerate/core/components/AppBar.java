@@ -2,54 +2,58 @@ package com.xmqiu.uigenerate.core.components;
 
 import com.xmqiu.uigenerate.core.BaseWidget;
 import com.xmqiu.uigenerate.core.ifs.IWidgetDesc;
-import com.xmqiu.uigenerate.core.widgets.BaseGroupWidget;
 import com.xmqiu.uigenerate.core.widgets.Container;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
 
 /**
  * @author xmqiu -- Administrator
  * createDate 2019/6/25 21:10
  */
-public class AppBar extends BaseGroupWidget {
+public class AppBar extends Container {
 
-  public AppBar(Style style) {
-    super(style);
-  }
-
-
-  public static final class AppBarBuilder {
-    Container mLeftWidget;
-    Container mCenterWidget;
-    Container mRightWidget;
-
-    private AppBarBuilder() {
+    public AppBar() {
+        super(new Locate.Linear(Locate.Linear.Oritential.Horiontal), Collections.<IWidgetDesc>emptyList());
     }
 
-    public static AppBarBuilder anAppBar() {
-      return new AppBarBuilder();
+    @Override
+    public String toString() {
+        return "AppBar{" +
+                "mLocate=" + mLocate +
+                '}';
     }
 
-    public AppBarBuilder withMLeftWidget(Container mLeftWidget) {
-      this.mLeftWidget = mLeftWidget;
-      return this;
-    }
+    public static final class AppBarBuilder {
+        BaseWidget mLeftWidget;
+        BaseWidget mCenterWidget;
+        BaseWidget mRightWidget;
 
-    public AppBarBuilder withMCenterWidget(Container mCenterWidget) {
-      this.mCenterWidget = mCenterWidget;
-      return this;
-    }
+        private AppBarBuilder() {
+        }
 
-    public AppBarBuilder withMRightWidget(Container mRightWidget) {
-      this.mRightWidget = mRightWidget;
-      return this;
-    }
+        public static AppBarBuilder anAppBar() {
+            return new AppBarBuilder();
+        }
 
-    public AppBar build() {
-      AppBar appBar = new AppBar(null);
-      appBar.addChildren(this.mLeftWidget,this.mCenterWidget, this.mRightWidget);
-      return appBar;
+        public AppBarBuilder withMLeftWidget(BaseWidget mLeftWidget) {
+            this.mLeftWidget = mLeftWidget;
+            return this;
+        }
+
+        public AppBarBuilder withMCenterWidget(BaseWidget mCenterWidget) {
+            this.mCenterWidget = mCenterWidget;
+            return this;
+        }
+
+        public AppBarBuilder withMRightWidget(BaseWidget mRightWidget) {
+            this.mRightWidget = mRightWidget;
+            return this;
+        }
+
+        public AppBar build() {
+            AppBar appBar = new AppBar();
+            appBar.addChildren(this.mLeftWidget, this.mCenterWidget, this.mRightWidget);
+            return appBar;
+        }
     }
-  }
 }

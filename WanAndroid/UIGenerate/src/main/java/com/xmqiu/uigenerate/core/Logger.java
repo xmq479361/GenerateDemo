@@ -6,7 +6,11 @@ package com.xmqiu.uigenerate.core;
  */
 public class Logger {
 
-  public static void info(String message) {
-    System.out.println(message);
-  }
+    public static void info(String message, Object... args) {
+        System.out.println(String.format(message, args));
+    }
+
+    public static void e(String tag, String value) {
+        System.out.println(tag + "/ " + value);
+    }
 }

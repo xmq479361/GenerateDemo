@@ -1,0 +1,38 @@
+{
+    "name": "DemoPage",
+    "type":"page",
+    "data":{
+        "type":"Container",
+        "width": "-1",
+        "height":"-1",
+        "children":[
+            {
+                "type":"Text",
+                "id": "id_left_text2",
+                "text": "Hello World!",
+                "width": "100",
+                "height":"100",
+                "gravity":"right",
+                "textSize":"12",
+                "textColor":"grey",
+                "alignToRight":"parent"
+            },
+            {
+                "type":"Text",
+                "id": "id_left_text",
+                "text": "Hello World!",
+                "width": "100",
+                "height":"100",
+                "gravity":"center",
+                "textSize":"12",
+                "textColor":"#fffccc",
+                  "align": {
+                      left:{"key": "toLeftOf", "value": "parent"},
+                      right: {},
+                      top: {},
+                      bottom: {}
+                  }
+            }
+        ]
+    }
+}

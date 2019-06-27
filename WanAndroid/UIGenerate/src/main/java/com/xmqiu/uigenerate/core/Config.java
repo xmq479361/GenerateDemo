@@ -1,21 +1,30 @@
 package com.xmqiu.uigenerate.core;
 
+import java.io.OutputStream;
+
 /**
  * @author xmqiu -- Administrator
  * createDate 2019/6/25 21:39
  */
 public class Config {
-  public int deep;
+    public int deep;
+    public String key;
 
-  public Config() {
-    deep = 0;
-  }
+    public Config(String key) {
+        deep = 0;
+        this.key = key;
+    }
 
-  public Config(int deep) {
-    this.deep = deep;
-  }
+    public Config(String key, int deep) {
+        this(key);
+        this.deep = deep;
+    }
 
-  public Config child() {
-    return new Config(deep + 1);
-  }
+    public OutputStream outputStream() {
+        return Output.output.get(key);
+    }
+
+    public Config child() {
+        return new Config(key, deep + 1);
+    }
 }

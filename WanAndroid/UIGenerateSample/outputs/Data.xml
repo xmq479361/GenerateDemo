@@ -1,0 +1,16 @@
+
+android:id="@+id/id_left_text2"
+android:text="100px"
+android:textSize="100px"
+android:text="HelloWorld!"
+android:textSize="12sp"
+android:textColor=""
+
+
+android:id="@+id/id_left_text"
+android:text="100px"
+android:textSize="100px"
+android:text="HelloWorld!"
+android:textSize="12sp"
+android:textColor="#fffccc"
+

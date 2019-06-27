@@ -1,1 +1,2 @@
-include ':app', ':XQBase', ':XQCommon', ':UIGenerate', ':UIGenerateSample'
+//include ':app', ':XQBase', ':XQCommon'
+include ':UIGenerate', ':UIGenerateSample'

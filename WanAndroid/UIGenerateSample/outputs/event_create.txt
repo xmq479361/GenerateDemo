@@ -1,0 +1,23 @@
+<TextView
+    android:width="wrap_content"
+    android:height="wrap_content"
+    android:text="<"
+    />
+<TextView
+    android:width="wrap_content"
+    android:height="wrap_content"
+    android:text="发起会议"
+    />
+<TextView
+    android:width="wrap_content"
+    android:height="wrap_content"
+    android:text="确定"
+    />
+<View
+    android:width="wrap_content"
+    android:height="12px"
+/>
+<View
+    android:width="wrap_content"
+    android:height="12px"
+/>

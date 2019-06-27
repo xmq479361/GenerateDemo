@@ -1,12 +1,10 @@
 package com.xmqiu.uigenerate.core.widgets;
 
-import com.xmqiu.uigenerate.core.BaseWidget;
 import com.xmqiu.uigenerate.core.components.Locate;
 import com.xmqiu.uigenerate.core.components.Style;
 import com.xmqiu.uigenerate.core.ifs.IWidgetDesc;
+import com.xmqiu.uigenerate.entity.Align;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -17,6 +15,7 @@ import java.util.List;
 public class Container extends BaseGroupWidget {
 
   public Locate mLocate;
+  public Align align;
 
   public Container(Locate locate, List<IWidgetDesc> children) {
     this(null, locate, children);
@@ -24,9 +23,8 @@ public class Container extends BaseGroupWidget {
   public Container(Style style, Locate locate, List<IWidgetDesc> children) {
     super(style);
     mLocate = locate;
-    this.children =children;
-    if(this.children==null){
-      this.children = Collections.emptyList();
+    if(children!=null){
+      this.children.addAll(children);
     }
   }
 
@@ -37,7 +35,14 @@ public class Container extends BaseGroupWidget {
     return new Container(new Locate.Linear(oritential), children);
   }
 
-  //  public static Container relative(Locate.Linear.Oritential oritential) {
-//    return new Container(new Locate.Linear(oritential));
-//  }
+    public static Container relative(Locate.Relative.Oritential oritential) {
+    return new Container(new Locate.Linear(oritential));
+  }
+
+  @Override
+  public String toString() {
+    return "Container{" +
+            "mLocate=" + mLocate +
+            '}';
+  }
 }

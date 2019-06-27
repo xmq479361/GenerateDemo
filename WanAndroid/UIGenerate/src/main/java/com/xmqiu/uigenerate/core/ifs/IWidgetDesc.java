@@ -1,6 +1,7 @@
 package com.xmqiu.uigenerate.core.ifs;
 
 import com.xmqiu.uigenerate.core.components.Style;
+import com.xmqiu.uigenerate.core.mapper.WidgetConfig;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface IWidgetDesc {
   List<IWidgetDesc> getChildren();
 
   Style getStyle();
+
+    void attachStyle(Style style);
 }

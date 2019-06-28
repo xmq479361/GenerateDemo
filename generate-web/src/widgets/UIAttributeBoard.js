@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Attribute} from '../config/UIConfigConsts'
 import '../assets/app.css'
-import {ControlLabel, FormControl, FormGroup, HelpBlock, Col} from "react-bootstrap";
+import {ControlLabel, FormControl, FormGroup, HelpBlock} from "react-bootstrap";
 
-// import Dropdown from 'react-bootstrap/lib/Dropdown'
 function FieldGroup({id, label, help, ...props}) {
     return (
         <FormGroup controlId={id}>
@@ -17,10 +15,11 @@ function FieldGroup({id, label, help, ...props}) {
 
 class AttributeItem extends Component {
     render() {
-        let {desc, type, def, value, name, unit} = this.props;
-        if (value == undefined) {
+        let {desc, type, def, value, name} = this.props;
+        if (value === undefined) {
             value = def;
         }
+
         // console.log(key, value, def, type, Attribute.propTypes[type])
 
         function renderByType(type) {
@@ -28,7 +27,7 @@ class AttributeItem extends Component {
                 case 'gravity':
                     return (
                         <FormGroup key={desc} controlId="formControlsSelect">
-                            <ControlLabel >{name}</ControlLabel>
+                            <ControlLabel>{name}</ControlLabel>
                             <FormControl componentClass="select" placeholder={value}>
                                 <option value="left">left</option>
                                 <option value="center">center</option>
@@ -75,7 +74,7 @@ class UIAttributeBoard extends Component {
         console.log(this.props.attrs)
         let {attrs} = this.props || [];
         return (
-            <aside >
+            <aside>
                 <fieldset>
                     <form>
                         {attrs.map(attr => <AttributeItem {...attr}/>)}
@@ -95,5 +94,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {}
 }
-export default connect(mapStateToProps, mapDispatchToProps)
-(UIAttributeBoard);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps)(
+    UIAttributeBoard
+);

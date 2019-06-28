@@ -1,6 +1,7 @@
 
 import {ADD, REMOVE, UPDATE, KEY_CACHE} from './Consts'
 import uiElements from '../../config/elements'
+import demo from '../../config/elements/Demo'
 import uuid from 'uuid'
 // TODO 加载本地缓存
 const loadCache = () => {
@@ -12,14 +13,14 @@ const loadCache = () => {
     }
     cacheData.uiElements = uiElements||[]
     // cacheData.uiPage = cacheData.uiPage || []
-    cacheData.uiPage = cacheData.uiPage || []
+    cacheData.uiPage =   demo
+
     cacheData.focusWidget = cacheData.focusWidget || uiElements[0]
     console.log("uiElements", cacheData.focusWidget)
     console.log(typeof cacheData.uiPage)
     if (typeof cacheData.uiPage !== "object") {
         cacheData.uiPage = {}
     }
-
     return cacheData
 }
 
@@ -64,6 +65,6 @@ export default (state, action) => {
     var cacheStr = JSON.stringify(stateWithCache);
     // console.log(cacheStr)
     localStorage.setItem(KEY_CACHE, cacheStr)
-    console.log("cacheStr: ", cacheStr)
+    // console.log("cacheStr: ", cacheStr)
     return stateWithCache
 }

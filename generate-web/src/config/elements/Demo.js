@@ -9,17 +9,17 @@ export default {
     background: "#FFFFFF",
     children: [
         {
-            type: "text",
+            type: "input",
             width: "10",
             height: "50px",
             hint: "请输入日程主题",
             margin: "5,5,5,5",
             textSize: "15",
             textColor: "#545454",
-            textStyle: "bold"
+            textStyle: "bold",
         },
         {
-            type: "text",
+            type: "input",
             width: "10",
             height: "50px",
             hint: "请输入日程内容",
@@ -117,7 +117,7 @@ export default {
             justify_content: "space-between",
             align_items: "start",
             width: "10",
-            height: "100px",
+            height: "50px",
             children: [
                 {
                     type: "icon",

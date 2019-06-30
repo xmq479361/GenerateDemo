@@ -38,4 +38,12 @@ export default {
             unit: "",
         },
     ],
+    def: {
+        type: "text",
+        width: "1",
+        height: "-1",
+        text: "",
+        textSize: "12",
+        textColor: "#222222",
+    }
 }

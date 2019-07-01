@@ -1,7 +1,4 @@
-import json
-
-from com.xmq.AndroidTemplate import AndroidTemplate
-from com.xmq.ReactTemplate import ReactTemplate
+from com.xmq.react.ReactTemplate import ReactTemplate
 
 data ={
     "type": "container",
@@ -12,29 +9,31 @@ data ={
     "width": "10",
     "height": "10",
     "background": "#FFFFFF",
+    "margin": "5px",
     "children": [
         {
             "type": "input",
-            "width": "10",
+            "width": "100%",
             "height": "50px",
             "hint": "请输入日程主题",
-            "margin": "5,5,5,5",
+            "margin": "5px",
             "textSize": "15",
             "textColor": "#545454",
             "textStyle": "bold",
         },
         {
             "type": "input",
-            "width": "10",
+            "width": "100%",
             "height": "50px",
             "hint": "请输入日程内容",
-            "margin": "5,5,5,5",
+            "margin": "5px 15px",
+            "padding": "5px 15px",
             "textSize": "12",
             "textColor": "#545454",
         },
         {
             "type": "spaceView",
-            "width": "10",
+            "width": "100%",
             "height": "1px",
             "background": "#d8d8d8"
         },
@@ -44,8 +43,8 @@ data ={
             "flex_direction": "row",
             "justify_content": "space-between",
             "align_items": "start",
-            "width": "10",
-            "height": "-1",
+            "width": "100%",
+            "height": "100px",
             "children": [
                 {
                     "type": "container",
@@ -54,7 +53,7 @@ data ={
                     "justify_content": "center",
                     "align_items": "center",
                     "width": "5",
-                    "height": "100px",
+                    "height": "100%",
                     "children": [
                         {
                             "type": "text",
@@ -75,13 +74,19 @@ data ={
                     ]
                 },
                 {
+                    "type": "spaceView",
+                    "height": "100%",
+                    "width": "1px",
+                    "background": "#b7d0d0"
+                },
+                {
                     "type": "container",
                     "display": "flex",
                     "flex_direction": "column",
                     "justify_content": "center",
                     "align_items": "center",
                     "width": "5",
-                    "height": "100px",
+                    "height": "100%",
                     "children": [
                         {
                             "type": "text",
@@ -106,7 +111,7 @@ data ={
         {
             "type": "spaceView",
             "height": "20px",
-            "width": "1",
+            "width": "100%",
             "background": "#b7d0d0"
         },
         {
@@ -115,7 +120,7 @@ data ={
             "flex_direction": "row",
             "justify_content": "space-between",
             "align_items": "start",
-            "width": "10",
+            "width": "100%",
             "height": "50px",
             "children": [
                 {
@@ -141,7 +146,7 @@ data ={
 def run():
     print("Main running")
     import sys
-    print("进程 " +sys.argv[1] +" 执行。")
+    print("进程执行。", sys.argv)
     # print(json.load(data));
     print(data)
     # template(data);

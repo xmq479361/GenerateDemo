@@ -1,0 +1,40 @@
+import React, {Component} from "react"
+import {
+    View,
+    Text,
+    TextInput,
+    Image,
+    Dimensions,
+    Platform,
+    StyleSheet,
+    PixelRatio
+} from 'react-native'
+
+let screenWidth = Dimensions.get('window').width;
+let screenHeight = Dimensions.get('window').height;
+let ratio = Dimensions.get('window').ratio;
+
+class DemoWidgetPage extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <View style={ {
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+            } }>
+                {{app_bar}}
+                {{content}}
+            </View>
+        )
+    }
+}
+
+const styles = StyleSheet.create({{styles}});
+
+module.exports = DemoWidgetPage;
+
+

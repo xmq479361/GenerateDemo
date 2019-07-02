@@ -2,8 +2,8 @@ from com.xmq.react.Base import BaseWidget
 
 
 class ImageWidget(BaseWidget):
-    def __init__(self, data):
-        BaseWidget.__init__(self, data)
+    def __init__(self, data, config):
+        BaseWidget.__init__(self, data, config)
 
     def get_attrs(self, parent_direction, curr_direction):
         src = self.get_with_def("src")
@@ -11,10 +11,14 @@ class ImageWidget(BaseWidget):
         style_str = self.build_default_style(parent_direction, 'row')
         class_str = ""
         # style_str += self.append( 'textStyle', "font-weight")
-        return {'style': style_str, 'class': class_str, 'src': '../static/imgs/%s'%src}
+        return {'style': style_str, 'class': class_str, 'source': 'require(\'../../public/imgs/%s\')'%src}
 
+      # <Image
+      #   style={styles.logo}
+      #   source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
+      # />
     # def get_content_generate(self, parent_direction):
     #     return self.get_with_def("text", "")
 
     def render_tag_name(self):
-        return "img"
+        return "Image"

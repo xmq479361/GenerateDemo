@@ -1,2 +1,2 @@
-<{{Tag}} {% for key, value in attrs %}{{key}}="{{value}}" {% endfor %} >{{content}}</{{Tag}}>
 
+<{{Tag}} {% if style != '' %}style={ {{style}} } {% endif %} {% for key, value in attrs %}{% if value != '' %}{{key}}={ {{value}} }{% endif %}{% endfor %} >{{content}}</{{Tag}}>

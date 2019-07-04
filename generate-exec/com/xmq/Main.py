@@ -170,6 +170,39 @@ data = {
                             },
                         ]
                     },
+                    {
+                        "type": "spaceView",
+                        "height": "100%",
+                        "width": "1px",
+                        "background": "#b7d0d0"
+                    },
+                    {
+                        "type": "container",
+                        "display": "flex",
+                        "flex_direction": "column",
+                        "justify_content": "center",
+                        "align_items": "center",
+                        "width": "5",
+                        "height": "100%",
+                        "children": [
+                            {
+                                "type": "text",
+                                "width": "5",
+                                "height": "-1",
+                                "text": "结束22",
+                                "textSize": "12",
+                                "textColor": "#545454",
+                            },
+                            {
+                                "type": "text",
+                                "width": "5",
+                                "height": "-1",
+                                "text": "2019/06/28 16:00",
+                                "textSize": "12",
+                                "textColor": "#545454",
+                            },
+                        ]
+                    },
                 ]
             },
             {

@@ -15,6 +15,7 @@ def mapper_attr_to(attribute_mappers, default_attrbute_mapper, attr_name, widget
             return
         attr_value = attr_mapper.support_with_default()
     # print("ReactAttrMapper mapper_attr_to", attr_mapper)
+    print("mapper to : ", attr_name, attr_value, attr_mapper)
     return attr_mapper.mapper(attr_name, attr_value, widget_dict, config)
 
 
@@ -28,6 +29,7 @@ class ReactAttrMapper(object):
         self.append(ReactAttrMapperMargin())
         self.append(ReactAttrMapperPadding())
         self.append(ReactAttrMapperBackground())
+        self.append(ReactAttrMapperChildren())
         self.default_attrbute_mapper = ReactAttrMapperDefault()
 
     def append(self, attr_mapper):
@@ -43,12 +45,14 @@ class ReactAttrMapper(object):
         # print("ReactAttrMapper attr_mapper type", widget, self.attributeMappers.keys())
         if type is None:
             return
-        for attr_name in widget_dict.keys():
+        widget_attr_keys = widget_dict.keys()
+        # widget_attr_keys.reverse()
+        for attr_name in widget_attr_keys:
             mapper_attr_to(self.attributeMappers, self.default_attrbute_mapper, attr_name, widget_dict, config)
 
 
 class AttrMapper(object):
-    type = None;
+    type = None
 
     def get_type(self):
         return type
@@ -59,7 +63,16 @@ class ReactAttrMapperDefault(AttrMapper):
         return "default"
 
     def mapper(self, attr_name, attr_value, widget_dict, config):
-        config.add_style_with_link(attr_name, attr_value)
+        # config.add_style_with_link(attr_name, attr_value)
+        pass
+
+class ReactAttrMapperChildren(AttrMapper):
+    def get_type(self):
+        return "children"
+
+    def mapper(self, attr_name, attr_value, widget_dict, config):
+        # config.add_style_with_link(attr_name, attr_value)
+        pass
 
 
 class ReactAttrMapperBackground(AttrMapper):
@@ -127,11 +140,10 @@ class ReactAttrMapperHeight(AttrMapper):
                 config.add_style_with_link('alignSelf', "stretch")
             else:
                 if int(attr_value) == -1:
-                    # self.append_style('height', int(height))
-                    self.append_style('flexGrow', 0)
+                    config.add_style('flexGrow', 0)
                 else:
                     # PixelRatio.getPixelSizeForLayoutSize(200)
-                    self.append_style('height', int(attr_value))
+                    config.add_style('height', int(attr_value))
 
 
 class ReactAttrMapperWidth(AttrMapper):

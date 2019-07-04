@@ -1,8 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 
-from com.xmq import PATH_OUTPUT
-from com.xmq.react import PATH_LAYOUT
-from com.xmq.react.Base import Config
+from com.xmq import WidgetConfig
 from com.xmq.react.Container import ContainerWidget
 from com.xmq.react.Page import PageWidget
 
@@ -10,7 +8,7 @@ from com.xmq.react.Page import PageWidget
 class ReactTemplate:
     def generate(self, data, config=None):
         # if config is None:
-        config = Config()
+        config = WidgetConfig()
         if data is None or data['type'] is None:
             return
         if data['type'] is 'page':

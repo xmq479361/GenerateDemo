@@ -1,13 +1,15 @@
 import React, {Component} from "react"
+
 import {
-    View,
-    Text,
-    TextInput,
-    Image,
-    Dimensions,
-    Platform,
-    StyleSheet,
-    PixelRatio
+	View,
+	Image,
+	Text,
+	TextInput,
+	Button,
+	Dimensions,
+	Platform,
+	StyleSheet,
+	PixelRatio 
 } from 'react-native'
 
 let screenWidth = Dimensions.get('window').width;
@@ -27,83 +29,101 @@ class DemoWidgetPage extends Component {
                 justifyContent: 'flex-start',
             } }>
                 
-<View style={ styles.container991202 }   >
-<View style={ styles.container307735 }   >
-<Image style={ styles.icon845478 }  source={ require('../../public/imgs/ico_back.webp') } ></Image></View>
+<View style={styles.container432643} >
+<View style={styles.container422394} >
+<Image style={styles.icon547858}
+source={require('../../public/imgs/ico_back.webp')}/>
+</View>
 
-<Text style={ styles.text807641 }   >新建日程</Text>
-<View style={ styles.container116242 }   >
-<Image style={ styles.icon845478 }  source={ require('../../public/imgs/ico_back.webp') } ></Image>
-<Image style={ styles.icon845478 }  source={ require('../../public/imgs/ico_back.webp') } ></Image></View>
+<Text style={styles.text189133}>新建日程</Text>
+<View style={styles.container304902} >
+<Image style={styles.icon547858}
+source={require('../../public/imgs/ico_back.webp')}/>
+<Image style={styles.icon547858}
+source={require('../../public/imgs/ico_back.webp')}/>
+</View>
+
 </View>
                 
-<View style={ styles.container941834 }   >
-<TextInput style={ styles.input308699 }  placeholder={ "请输入日程主题" } ></TextInput>
-<TextInput style={ styles.input419992 }  placeholder={ "请输入日程内容" } ></TextInput>
-<View style={ styles.spaceView274542 }   ></View>
-<View   ></View>
-<View style={ styles.container395188 }   >
-<View style={ styles.container74667 }   >
-<Text style={ styles.text744130 }   >开始</Text>
-<Text style={ styles.text744130 }   >2019/06/28 15:00</Text></View>
-
-<View style={ styles.spaceView759612 }   ></View>
-<View   ></View>
-<View style={ styles.container74667 }   >
-<Text style={ styles.text744130 }   >结束</Text>
-<Text style={ styles.text744130 }   >2019/06/28 16:00</Text></View>
+<View style={styles.container852522} >
+<TextInput style={styles.input40292}
+placeholder="请输入日程主题"/>
+<TextInput style={styles.input820111}
+placeholder="请输入日程内容"/>
+<View style={styles.spaceView985823}/>
+<View style={styles.container182027} >
+<View style={styles.container218762} >
+<Text style={styles.text113577}>开始</Text>
+<Text style={styles.text113577}>2019/06/28 15:00</Text>
 </View>
 
-<View style={ styles.spaceView920577 }   ></View>
-<View   ></View>
-<View style={ styles.container670233 }   >
-<Image style={ styles.icon845478 }  source={ require('../../public/imgs/event/ico_event_tag.png') } ></Image>
-<TextInput style={ styles.input913714 }  placeholder={ "请输入标签" } ></TextInput></View>
+<View style={styles.spaceView300148}/>
+<View style={styles.container218762} >
+<Text style={styles.text113577}>结束</Text>
+<Text style={styles.text113577}>2019/06/28 16:00</Text>
+</View>
 
-<Button style={ styles.button352638 }  color={ "#545454" }accessibilityLabel={ "提交" } >提交</Button></View>
+<View style={styles.spaceView300148}/>
+<View style={styles.container218762} >
+<Text style={styles.text113577}>结束22</Text>
+<Text style={styles.text113577}>2019/06/28 16:00</Text>
+</View>
+
+</View>
+
+<View style={styles.spaceView688540}/>
+<View style={styles.container860954} >
+<Image style={styles.icon476790}
+source={require('../../public/imgs/event/ico_event_tag.png')}/>
+<TextInput style={styles.input714201}
+placeholder="请输入标签"/>
+</View>
+
+<Button style={styles.button389304}
+title="提交"/>
+</View>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    icon845478: {
+    icon547858: {
         width:32,
         height:32
     },
-    container307735: {
-        flexGrow:1,
+    container422394: {
         flexDirection:"row",
-        flex:1
+        flexGrow:1
     },
-    text807641: {
+    text189133: {
         flexGrow:0,
         padding:0
     },
-    container116242: {
-        flexGrow:1,
+    container304902: {
         flexDirection:"row",
         justifyContent:"flex-end",
-        flex:1
+        flexGrow:1
     },
-    container991202: {
-        padding:5,
-        backgroundColor:"#CFAFFF",
+    container432643: {
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center",
-        flex:1
+        alignSelf:"stretch",
+        flexGrow:0,
+        backgroundColor:"#CFAFFF",
+        padding:5
     },
-    input308699: {
+    input40292: {
         alignSelf:"stretch",
         height:50,
         margin:5,
-        padding:0,
         fontSize:15,
         color:"#545454",
-        fontWeight:"bold"
+        fontWeight:"bold",
+        padding:0
     },
-    input419992: {
+    input820111: {
         alignSelf:"stretch",
         height:50,
         marginVertical:5,
@@ -113,73 +133,75 @@ const styles = StyleSheet.create({
         fontSize:12,
         color:"#545454"
     },
-    spaceView274542: {
+    spaceView985823: {
         alignSelf:"stretch",
         height:1,
         backgroundColor:"#d8d8d8"
     },
-    text744130: {
+    text113577: {
         flexGrow:0,
-        padding:0,
         fontSize:12,
-        color:"#545454"
+        color:"#545454",
+        padding:0
     },
-    container74667: {
-        flexGrow:5,
-        alignSelf:"stretch",
+    container218762: {
         flexDirection:"column",
         justifyContent:"center",
         alignItems:"center",
-        flex:1
+        flexGrow:5,
+        alignSelf:"stretch"
     },
-    spaceView759612: {
-        width:1,
+    spaceView300148: {
         alignSelf:"stretch",
+        width:1,
         backgroundColor:"#b7d0d0"
     },
-    container395188: {
-        alignSelf:"stretch",
-        height:100,
+    container182027: {
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"flex-start",
-        flex:1
-    },
-    spaceView920577: {
         alignSelf:"stretch",
+        height:100
+    },
+    spaceView688540: {
         height:20,
+        alignSelf:"stretch",
         backgroundColor:"#37d0d0"
     },
-    input913714: {
-        flexGrow:1,
+    icon476790: {
+        width:32,
         height:32,
-        padding:0,
         fontSize:12,
         color:"#545454"
     },
-    container670233: {
-        alignSelf:"stretch",
-        height:50,
+    input714201: {
+        flexGrow:1,
+        height:32,
+        fontSize:12,
+        color:"#545454",
+        padding:0
+    },
+    container860954: {
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"flex-start",
-        flex:1
+        alignSelf:"stretch",
+        height:50
     },
-    button352638: {
+    button389304: {
         alignSelf:"stretch",
         height:50,
-        padding:0,
         fontSize:12,
-        color:"#545454"
+        color:"#545454",
+        padding:0
     },
-    container941834: {
-        flexGrow:10,
-        margin:5,
-        backgroundColor:"#FFFFFF",
+    container852522: {
         flexDirection:"column",
         justifyContent:"flex-start",
         alignItems:"flex-start",
-        flex:1
+        flexGrow:10,
+        backgroundColor:"#FFFFFF",
+        margin:5
     }
 });
 

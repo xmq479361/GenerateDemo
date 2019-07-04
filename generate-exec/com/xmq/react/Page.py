@@ -14,52 +14,56 @@ class AppBarWidget(ContainerWidget):
     def __init__(self, data, config={}):
         BaseWidget.__init__(self, data, config)
 
-    def get_attrs(self, parent_direction, curr_direction):
-        style_str = self.build_default_style(parent_direction, curr_direction)
-        class_str = ""
-        style_str  =self.append(style_str, 'display', "display")
-        style_str  =self.append(style_str, 'flex_direction', "flex-direction")
-        style_str = self.append(style_str,"justify_content", 'justify-content')
-        style_str = self.append(style_str,"align_items", 'align-items')
-        return {"style": style_str, "class": class_str}
-
-
 class PageWidget(BaseWidget):
     def __init__(self, data, config={}):
         BaseWidget.__init__(self, data, config)
-
-    def get_attrs(self, parent_direction, curr_direction):
-        style_str = self.build_default_style(parent_direction, curr_direction)
-        class_str = ""
-        return {"style": json.load(style_str), "className": class_str}
 
     def get_content_generate(self, parent_direction):
         child_content = ""
         return child_content
 
+    def get_import_arrays(self):
+        self.config.add_import('react-native', 'Dimensions')
+        self.config.add_import('react-native', 'Platform')
+        self.config.add_import('react-native', 'StyleSheet')
+        self.config.add_import('react-native', 'PixelRatio')
+        import_array =[]
+        imports = self.config.get_imports()
+        for import_key in imports:
+            import_group = imports.get(import_key, None)
+            if import_group is not None and len(import_group)>0:
+                import_item ="import {"
+                lens = len(import_group)
+                for index,impt in enumerate(import_group):
+                    import_item += "\n\t"+impt
+                    if index+1 < lens:
+                        import_item +=","
+                import_array.append("%s \n} from '%s'"%(import_item, import_key))
+        print("import_array", str(import_array))
+        return import_array
+
     def generate_file(self, parent_direction=None):
+
+        # TODO appBar
         app_bar_content = ""
-        body_content = ""
         app_bar = self.get_with_def('appBar', {})
         if app_bar is not None:
             app_bar_content = ContainerWidget(app_bar, self.config).generate(parent_direction)
+
+        # TODO body
+        body_content = ""
         body = self.get_with_def('body', {})
         if body is not None:
             body_content += ContainerWidget(body, self.config).generate(parent_direction)
 
+        # TODO styles
+        styles=json.dumps(self.config.get_global_style(), indent=4)
+        styles = JsonFormatter(styles).render()
+
         print("\nPage generate() app_bar", app_bar_content)
         template_env = Environment(loader=FileSystemLoader(searchpath=PATH_LAYOUT, encoding='utf-8'))
         tpl = template_env.get_template('Page.html')
-        # render_content = tpl.render(content=content)
-        # stylelist = []
-        # for style in self.config.getStyles():
-        #     stylelist.append(json.load(style))
-        styles=json.dumps(self.config.getStyles(), indent=4)
 
-        styles = JsonFormatter(styles).render()
-        render_content = tpl.render(content=body_content, app_bar=app_bar_content, styles= styles)
+
         with open(PATH_OUTPUT + 'PageReact.js', 'w+', encoding='utf-8') as fout:
-            fout.write(render_content)
-        print("config: ", self.config)
-        print(self.config.getStyles())
-        # print(json.load(self.config.getStyles()))
+            fout.write(tpl.render(content=body_content, app_bar=app_bar_content, styles= styles, imports= self.get_import_arrays()))

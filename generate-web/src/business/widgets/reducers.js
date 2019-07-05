@@ -39,10 +39,15 @@ const coreProcess = (state, action) => {
     switch (action.type) {
         case ADD:
             // return Object.assign({}, state, {
-            //     uiPage: [ // TODO 新建todo数据并合并入todos中
+            //     uiPage: [ // TODO 新建数据并合并入todos中
             //         ...state.uiPage, newInstance(action.id, action.widget)
             //     ]
             // })
+            break;
+        case UPDATE:
+            return Object.assign({}, state, {
+                focusWidget: action.widget
+            })
             break;
         // case REMOVE:
         //     return Object.assign({}, state, {

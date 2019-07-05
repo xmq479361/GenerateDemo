@@ -77,7 +77,7 @@ class UIAttributeBoard extends Component {
             <aside>
                 <fieldset>
                     <form>
-                        {attrs.map(attr => <AttributeItem {...attr}/>)}
+                        {/*{attrs.map(attr => <AttributeItem {...attr}/>)}*/}
                     </form>
                 </fieldset>
             </aside>

@@ -13,6 +13,7 @@ export const removeWidget = (widget) => {
     }
 }
 export const updateWidget = (widget) => {
+    console.log("updateWIdget: ", widget);
     return {
         type: UPDATE,
         widget: widget

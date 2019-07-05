@@ -7,33 +7,38 @@ export default {
     width: "10",
     height: "10",
     background: "#FFFFFF",
+    id: "container01",
     children: [
         {
+            id: "input01",
             type: "input",
             width: "10",
             height: "50px",
             hint: "请输入日程主题",
-            margin: "5,5,5,5",
+            margin: "5 px",
             textSize: "15",
             textColor: "#545454",
             textStyle: "bold",
         },
         {
+            id: "input02",
             type: "input",
             width: "10",
             height: "50px",
             hint: "请输入日程内容",
-            margin: "5,5,5,5",
+            margin: "5px",
             textSize: "12",
             textColor: "#545454",
         },
         {
+            id: "space01",
             type: "spaceView",
             width: "10",
             height: "1px",
             background: "#d8d8d8"
         },
         {
+            id: "container02",
             type: "container",
             display: "flex",
             flex_direction: "row",
@@ -43,6 +48,7 @@ export default {
             height: "-1",
             children: [
                 {
+                    id: "container03",
                     type: "container",
                     display: "flex",
                     flex_direction: "column",
@@ -52,6 +58,7 @@ export default {
                     height: "100px",
                     children: [
                         {
+                            id: "text01",
                             type: "text",
                             width: "5",
                             height: "-1",
@@ -60,6 +67,7 @@ export default {
                             textColor: "#545454",
                         },
                         {
+                            id: "text02",
                             type: "text",
                             width: "5",
                             height: "-1",
@@ -70,12 +78,14 @@ export default {
                     ]
                 },
                 {
+                    id: "space02",
                     type: "spaceView",
                     width: "1px",
                     height: "10",
                     background: "#d8d8d8"
                 },
                 {
+                    id: "container03",
                     type: "container",
                     display: "flex",
                     flex_direction: "column",
@@ -85,6 +95,7 @@ export default {
                     height: "100px",
                     children: [
                         {
+                            id: "text03",
                             type: "text",
                             width: "5",
                             height: "-1",
@@ -93,6 +104,7 @@ export default {
                             textColor: "#545454",
                         },
                         {
+                            id: "text04",
                             type: "text",
                             width: "5",
                             height: "-1",
@@ -105,12 +117,14 @@ export default {
             ]
         },
         {
+            id: "space03",
             type: "spaceView",
             height: "20px",
             width: "1",
             background: "#b7d0d0"
         },
         {
+            id: "container04",
             type: "container",
             display: "flex",
             flex_direction: "row",
@@ -120,6 +134,7 @@ export default {
             height: "50px",
             children: [
                 {
+                    id: "icon01",
                     type: "icon",
                     width: "32px",
                     height: "32px",
@@ -128,6 +143,7 @@ export default {
                     textColor: "#545454",
                 },
                 {
+                    id: "input03",
                     type: "input",
                     width: "1",
                     height: "32px",

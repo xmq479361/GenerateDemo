@@ -1,0 +1,3 @@
+{{'\n\t'}}<View {% if style != '' %}style={{style}}{% endif %}>
+      <{{Tag}} {% if style != '' %}style={{style}}{% endif %}{% for key, value in attrs %}{% if value and value != '' %}{{'\n\t'+key}}={{value}}{% endif %}{% endfor %}>{{content}}</{{Tag}}>
+</View>

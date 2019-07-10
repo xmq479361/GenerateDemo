@@ -25,9 +25,10 @@ class UIElementBoard extends Component {
 
     renderElement = (element) => {
         let {name} = element
+        // <i className="icon iconfont icon-input"></i>
         return (
             <li className="form-edit-widget-label">
-                <a href="#"><i className="icon iconfont icon-input"></i><span>{name}</span></a>
+                <span>{name}</span>
             </li>
         )
     }
@@ -40,35 +41,9 @@ class UIElementBoard extends Component {
             <div className="components-list">
                 <ul>
                     {uiElements.map(element => this.renderElement(element))}
-                    <li className="form-edit-widget-label"><a href="#">
-                    <i className="icon iconfont icon-input"></i><span>单行文本</span></a>
+                    <li className="form-edit-widget-label">
+                        <i className="icon iconfont icon-input"></i><span>单行文本</span>
                     </li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-diy-com-textarea"></i><span>多行文本</span></a></li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-number"></i><span>计数器</span></a>
-                    </li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-radio-active"></i><span>单选框组</span></a></li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-check-box"></i><span>多选框组</span></a></li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-time"></i><span>时间选择器</span></a>
-                    </li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-date"></i><span>日期选择器</span></a>
-                    </li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-icon-test"></i><span>评分</span></a></li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-color"></i><span>颜色选择器</span></a>
-                    </li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-select"></i><span>下拉选择框</span></a></li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-switch"></i><span>开关</span></a></li>
-                    <li className="form-edit-widget-label"><a href="#"><i
-                        className="icon iconfont icon-slider"></i><span>滑块</span></a></li>
                 </ul>
             </div>
         )

@@ -1,0 +1,44 @@
+.drag-widget-view {
+    width: 100%;
+    height: 100%;
+}
+
+.drag-widget-view-root {
+    outline: 2px solid #e6a23c;
+    border: 1px solid #e6a23c;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.drag-widget-view-content {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.drag-widget-view-action {
+    height: 50px;
+}
+
+.drag-widget-view-action i:hover {
+    /*border: 1px solid #e6a23c;*/
+    background: #56aaac;
+}
+
+.drag-widget-view-action i {
+    float: right;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 5px;
+    background: #c6eaec;
+    border-radius: 8px;
+}
+
+.action-drag {
+    cursor: pointer;
+}

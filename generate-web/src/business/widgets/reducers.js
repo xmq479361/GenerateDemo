@@ -1,5 +1,4 @@
-
-import {ADD, REMOVE, UPDATE, KEY_CACHE} from './Consts'
+import {ADD, KEY_CACHE, REMOVE, UPDATE} from './Consts'
 import uiElements from '../../config/elements'
 import demo from '../../config/elements/Demo'
 // import uuid from 'uuid'
@@ -14,7 +13,7 @@ const loadCache = () => {
     // cacheData.uiElements = uiElements|| []
     cacheData.uiElements = uiElements
     // cacheData.uiPage = cacheData.uiPage || []
-    cacheData.uiPage =   demo
+    cacheData.uiPage = demo
 
     cacheData.focusWidget = cacheData.focusWidget || uiElements[0]
     console.log("uiElements", cacheData.focusWidget)
@@ -25,7 +24,7 @@ const loadCache = () => {
     return cacheData
 }
 
-const newInstance = (id, widgetJson)=>{
+const newInstance = (id, widgetJson) => {
     return {
         id,
         widget: widgetJson
@@ -34,7 +33,7 @@ const newInstance = (id, widgetJson)=>{
 
 // TODO 核心todo数据修改逻辑
 const coreProcess = (state, action) => {
-    console.log("reducer handle:: "+action.type)
+    console.log("reducer handle:: " + action.type)
     console.log(state)
     switch (action.type) {
         case ADD:
@@ -49,12 +48,13 @@ const coreProcess = (state, action) => {
                 focusWidget: action.widget
             })
             break;
-        // case REMOVE:
-        //     return Object.assign({}, state, {
-        //         // TODO 这里当id 与action中id一致的情况下， 过滤条件成立，
-        //         // TODO 则移除数据并赋值给todos
-        //         uiPage: state.uiPage.filter(item => item.id !== action.id)
-        //     })
+        case REMOVE:
+            return Object.assign({}, state, {
+                // TODO 这里当id 与action中id一致的情况下， 过滤条件成立，
+                // TODO 则移除数据并赋值给todos
+                // uiPage: state.uiPage.filter(item => item.id !== action.id)
+                uiPage: filterById(state.uiPage, action.id)
+            })
         // case UPDATE:
         //     // TODO 修改内存中的过滤器
         //     return Object.assign({}, state, {filter: action.filter})
@@ -62,6 +62,19 @@ const coreProcess = (state, action) => {
             break;
     }
     return state;
+}
+
+const filterById = (data = [], findId) => {
+    // if(type(data) === array){
+    let {id, children = []} = data;
+    if (id === findId) {
+        console.log("filterById finded: ", findId, id, data);
+        return null
+    }
+    if (data instanceof Array) {
+        return data.filter(item => filterById(item, findId)!==null)
+    }
+    return Object.assign(data, {children: filterById(children, findId)});
 }
 export default (state, action) => {
     let stateWithCache = state
